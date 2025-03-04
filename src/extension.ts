@@ -37,8 +37,7 @@ export function activate(context: vscode.ExtensionContext) {
             }, async () => {
                 const openai = new OpenAI({ apiKey });
                 const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-                const titleKeywords = requirement.split(' ').slice(0, 3).join('-');
-                const docTitle = `trae-prompt-${titleKeywords}-${timestamp}.md`;
+                const docTitle = `trae-prompt-${timestamp}.md`;
                 const doc = await vscode.workspace.openTextDocument({
                     content: '',
                     language: 'markdown'
@@ -48,7 +47,7 @@ export function activate(context: vscode.ExtensionContext) {
 
                 let content = '';
                 const stream = await openai.chat.completions.create({
-                    model: "gpt-4",
+                    model: "gpt-4o",
                     messages: [{
                         role: "system",
                         content: `请根据我的需求生成传递给AI编辑器的提示词，提示词需要清晰的扩展描述我的真实需求以及需求边界，确保AI编辑器能够根据提示词在无需提示的最大程度上自动生成整个项目的代码，提示词不宜过长也不宜出现具体的项目代码，以需求描述为主，不要涉及复杂高级的技术。`
