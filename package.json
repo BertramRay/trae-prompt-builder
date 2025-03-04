@@ -3,6 +3,7 @@
   "displayName": "trae prompt builder",
   "description": "Generate detailed trae AI code editor prompt with simple words!",
   "version": "0.0.1",
+  "publisher": "bertramray",
   "engines": {
     "vscode": "^1.97.0"
   },
