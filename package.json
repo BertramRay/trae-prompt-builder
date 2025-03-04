@@ -4,6 +4,7 @@
   "description": "Generate detailed trae AI code editor prompt with simple words!",
   "version": "0.0.1",
   "publisher": "bertramray",
+  "icon": "icon128.png",
   "engines": {
     "vscode": "^1.97.0"
   },
