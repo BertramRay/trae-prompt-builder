@@ -43,7 +43,7 @@ export function activate(context: vscode.ExtensionContext) {
                     return;
                 }
                 const workspaceFolder = vscode.workspace.workspaceFolders[0];
-                const docTitle = `trae-prompt-${titleKeywords}-${timestamp}.md`;
+                const docTitle = `PRD-${titleKeywords}-${timestamp}.md`;
                 const uri = vscode.Uri.joinPath(workspaceFolder.uri, docTitle);
                 await vscode.workspace.fs.writeFile(uri, Buffer.from(''));
                 const doc = await vscode.workspace.openTextDocument(uri);
