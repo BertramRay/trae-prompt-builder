@@ -5,3 +5,4 @@ marketing
 .vscode-test/
 *.vsix
 PRD*
+.env
