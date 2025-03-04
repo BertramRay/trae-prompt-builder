@@ -1,71 +1,34 @@
-# trae-prompt-builder README
+# Trae Prompt Builder
 
-This is the README for your extension "trae-prompt-builder". After writing up a brief description, we recommend including the following sections.
+一个简单而强大的VS Code扩展，帮助你快速生成适用于Trae AI代码编辑器的提示词。
 
-## Features
+## 功能特点
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- 通过简单的描述生成详细的AI提示词
+- 支持中英双语输入
+- 自动优化提示词以获得最佳代码生成效果
+- 完全集成到VS Code环境中
 
-For example if there is an image subfolder under your extension project workspace:
+## 使用方法
 
-\!\[feature X\]\(images/feature-x.png\)
+1. 在VS Code中安装本扩展
+2. 在设置中配置OpenAI API密钥
+3. 使用快捷键或命令面板调用"Trae: Generate AI Prompt"命令
+4. 输入你的需求描述
+5. 等待生成优化后的提示词
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## 配置选项
 
-## Requirements
+本扩展提供以下配置选项：
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+* `trae-prompt-builder.openaiApiKey`: 设置OpenAI API密钥（必需）
 
-## Extension Settings
+## 注意事项
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+- 请确保您有有效的OpenAI API密钥
+- 生成的提示词将以Markdown格式打开
+- 建议使用简洁明了的需求描述以获得最佳效果
 
-For example:
+## 许可证
 
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+MIT
