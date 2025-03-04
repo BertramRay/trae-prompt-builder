@@ -50,11 +50,14 @@ export function activate(context: vscode.ExtensionContext) {
                 await vscode.window.showTextDocument(doc);
 
                 let content = '';
+                const techStack = config.get<string[]>('techStack', []);
+                const techStackPrompt = techStack.length > 0 ? `，并优先使用以下技术栈：${techStack.join('、')}` : '';
+
                 const stream = await openai.chat.completions.create({
                     model: "gpt-4o",
                     messages: [{
                         role: "system",
-                        content: `请根据我的需求生成传递给AI编辑器的提示词，提示词需要清晰的扩展描述我的真实需求以及需求边界，确保AI编辑器能够根据提示词在无需提示的最大程度上自动生成整个项目的代码，提示词不宜过长也不宜出现具体的项目代码，以需求描述为主，不要涉及复杂高级的技术。`
+                        content: `请根据我的需求生成传递给AI编辑器的提示词，提示词需要清晰的扩展描述我的真实需求以及需求边界，确保AI编辑器能够根据提示词在无需提示的最大程度上自动生成整个项目的代码，提示词不宜过长也不宜出现具体的项目代码，以需求描述为主，不要涉及复杂高级的技术${techStackPrompt}。`
                     }, {
                         role: "user",
                         content: requirement
