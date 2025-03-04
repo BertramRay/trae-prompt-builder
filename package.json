@@ -62,8 +62,8 @@
     "lint": "eslint src",
     "test": "vscode-test",
     "package": "vsce package",
-    "publish:vscode": "vsce publish --pat %VSCE_PAT%",
-    "publish:ovsx": "ovsx publish --pat %OVSX_PAT%",
+    "publish:vscode": "vsce publish --pat $VSCE_PAT",
+    "publish:ovsx": "ovsx publish --pat $OVSX_PAT",
     "publish:all": "npm run publish:vscode && npm run publish:ovsx"
   },
   "devDependencies": {
