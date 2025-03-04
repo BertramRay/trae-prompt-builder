@@ -50,8 +50,8 @@ export function activate(context: vscode.ExtensionContext) {
                 await vscode.window.showTextDocument(doc);
 
                 let content = '';
-                const techStack = config.get<string[]>('techStack', []);
-                const techStackPrompt = techStack.length > 0 ? `，并优先使用以下技术栈：${techStack.join('、')}` : '';
+                const techStack = config.get<string>('techStack', '');
+                const techStackPrompt = techStack ? `，在存在同类技术选择时优先使用以下技术栈：${techStack}，但不要为使用而使用` : '';
 
                 // 获取提示词模板
                 const systemPromptTemplate = config.get<string>('systemPromptTemplate', '');

@@ -36,12 +36,9 @@
           "description": "OpenAI API Key for generating prompts"
         },
         "trae-prompt-builder.techStack": {
-          "type": "array",
-          "default": [],
-          "description": "Preferred technology stack (e.g., [\"React\", \"TypeScript\", \"Node.js\"])",
-          "items": {
-            "type": "string"
-          }
+          "type": "string",
+          "default": "",
+          "description": "Preferred technology stack (e.g., React, TypeScript, Node.js)"
         },
         "trae-prompt-builder.systemPromptTemplate": {
           "type": "string",
