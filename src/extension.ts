@@ -38,8 +38,13 @@ export function activate(context: vscode.ExtensionContext) {
                 const openai = new OpenAI({ apiKey });
                 const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
                 const titleKeywords = requirement.split(' ').slice(0, 3).join('-');
+                if (!vscode.workspace.workspaceFolders || vscode.workspace.workspaceFolders.length === 0) {
+                    vscode.window.showErrorMessage('请在工作区中使用此命令');
+                    return;
+                }
+                const workspaceFolder = vscode.workspace.workspaceFolders[0];
                 const docTitle = `trae-prompt-${titleKeywords}-${timestamp}.md`;
-                const uri = vscode.Uri.file(docTitle);
+                const uri = vscode.Uri.joinPath(workspaceFolder.uri, docTitle);
                 await vscode.workspace.fs.writeFile(uri, Buffer.from(''));
                 const doc = await vscode.workspace.openTextDocument(uri);
                 await vscode.window.showTextDocument(doc);

@@ -2,9 +2,13 @@
   "name": "trae-prompt-builder",
   "displayName": "trae prompt builder",
   "description": "Generate detailed trae AI code editor prompt with simple words!",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "bertramray",
   "icon": "icon128.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bertramray/trae-prompt-builder.git"
+  },
   "engines": {
     "vscode": "^1.97.0"
   },
