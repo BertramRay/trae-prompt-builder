@@ -37,12 +37,11 @@ export function activate(context: vscode.ExtensionContext) {
             }, async () => {
                 const openai = new OpenAI({ apiKey });
                 const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-                const docTitle = `trae-prompt-${timestamp}.md`;
-                const doc = await vscode.workspace.openTextDocument({
-                    content: '',
-                    language: 'markdown'
-                });
-                await vscode.workspace.fs.writeFile(vscode.Uri.file(docTitle), Buffer.from(''));
+                const titleKeywords = requirement.split(' ').slice(0, 3).join('-');
+                const docTitle = `trae-prompt-${titleKeywords}-${timestamp}.md`;
+                const uri = vscode.Uri.file(docTitle);
+                await vscode.workspace.fs.writeFile(uri, Buffer.from(''));
+                const doc = await vscode.workspace.openTextDocument(uri);
                 await vscode.window.showTextDocument(doc);
 
                 let content = '';
