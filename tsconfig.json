@@ -1,6 +1,7 @@
 {
 	"compilerOptions": {
-		"module": "Node16",
+		"module": "CommonJS",
+		"esModuleInterop": true,
 		"target": "ES2022",
 		"outDir": "out",
 		"lib": [
