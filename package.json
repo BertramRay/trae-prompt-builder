@@ -10,9 +10,6 @@
     "url": "https://github.com/bertramray/trae-prompt-builder.git"
   },
   "license": "MIT",
-  "engines": {
-    "vscode": "^1.97.0"
-  },
   "dependencies": {
     "openai": "^4.28.0"
   },
