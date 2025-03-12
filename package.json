@@ -2,7 +2,7 @@
   "name": "trae-prompt-builder",
   "displayName": "Trae Prompt Builder",
   "description": "Generate detailed trae AI code editor prompt with simple words!",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "publisher": "bertramray",
   "icon": "icon128.png",
   "repository": {
@@ -10,6 +10,9 @@
     "url": "https://github.com/bertramray/trae-prompt-builder.git"
   },
   "license": "MIT",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
   "dependencies": {
     "openai": "^4.28.0"
   },
@@ -64,7 +67,7 @@
     "publish:all": "npm run publish:vscode && npm run publish:ovsx"
   },
   "devDependencies": {
-    "@types/vscode": "^1.97.0",
+    "@types/vscode": "^1.96.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "20.x",
     "@typescript-eslint/eslint-plugin": "^8.25.0",
